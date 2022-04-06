@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "user_registration";
+}
+@{Layout = null;}
+
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/css/metisMenu.min.css" rel="stylesheet" />
+
+
+    <link href="~/Content/css/startmin.css" rel="stylesheet" />
+
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+
+    <div style="border:1px solid">
+        <h1 style="text-align:center; color:seagreen">WELCOME TO CHETU INDIA PLEASE SIGN UP</h1>
+    </div>
+    @model CHETU_MVC_CRUD_APP.Models.usermodel
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign Up</h3>
+                    </div>
+                    <div class="panel-body">
+                        @using (Html.BeginForm("user_registration", "Home", FormMethod.Post))
+                        {
+
+                            <div class=" form-group">
+
+                                <label>NAME</label>
+                                @Html.TextBoxFor(m => m.name, new { @class = "form-control", @placeholder = "name", @Required = "Required" })
+                            </div>
+                            <div class=" form-group">
+
+                                <label> EMAIL</label>
+                                @Html.TextBoxFor(m => m.email, new { @class = "form-control", @placeholder = "email", @Required = "Required" })
+                            </div>
+                            <div class="form-group">
+                                <label>PASSWORD</label>
+                                @Html.PasswordFor(m => m.password, new { @class = "form-control", @placeholder = "password" })
+
+                            </div>
+
+                            <button type="submit" class="btn btn-sm btn-info" >submit</button>
+                            <a href="@Url.Action("Index","Home")" class="btn btn-info">Back</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
